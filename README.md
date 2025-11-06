@@ -1,28 +1,25 @@
-Здесь укажите имя вашего бакета: s3-student-mle-20250227-831080ee09
-
 # Real Estate Price Prediction API
 
-Описание проекта
+Project Description
 
-Этот проект представляет собой FastAPI-микросервис для предсказания цен на недвижимость.
-В основе сервиса — обученная ML-модель (RandomForest + feature engineering pipeline), сохранённая в формате MLflow и загружаемая локально при старте сервиса.
+This project is a FastAPI microservice for predicting real estate prices.
+The service is based on a trained ML model (RandomForest + feature engineering pipeline), saved in MLflow format and loaded locally at service startup.
+The service wraps the model in a REST API and provides:
+- /predict endpoint for price predictions;
+- /metrics endpoint with Prometheus-format metrics for monitoring;
+- Swagger UI documentation at /docs.
 
-Сервис оборачивает модель в REST API и предоставляет:
-	•	эндпоинт /predict для предсказаний цены;
-	•	эндпоинт /metrics с метриками в формате Prometheus для мониторинга;
-	•	Swagger UI документацию по адресу /docs.
+Goals
+- Create a reproducible and isolated microservice for the ML model.
+- Provide a convenient REST API for integration with other systems.
+- Add quality and performance monitoring using Prometheus and Grafana.
+- Simplify deployment using Docker and Docker Compose.
 
-Цели
-	•	Создать воспроизводимый и изолированный микросервис для ML-модели.
-	•	Обеспечить удобный REST API для интеграции с другими системами.
-	•	Добавить мониторинг качества и производительности с помощью Prometheus и Grafana.
-	•	Упростить деплой с помощью Docker и Docker Compose.
-
-Используемые технологии
-	•	Python 3.10 — основной язык разработки.
-	•	FastAPI — фреймворк для API.
-	•	MLflow — хранение и загрузка ML-модели.
-	•	scikit-learn — обучение модели.
-	•	Prometheus + Grafana — система мониторинга и дашборды.
-	•	Docker, Docker Compose — контейнеризация и запуск сервисов.
-	•	pydantic — валидация входных данных.
+Technologies Used
+- Python 3.10 - main development language.
+- FastAPI - API framework.
+- MLflow - ML model storage and loading.
+- scikit-learn - model training.
+- Prometheus + Grafana - monitoring system and dashboards.
+- Docker, Docker Compose - containerization and service orchestration.
+- pydantic - input data validation.
